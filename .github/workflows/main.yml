@@ -37,4 +37,10 @@ jobs:
         with:
           name: playwright-results
           path: playwright-report
-
+          
+      - name: Upload test screenshots of 
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: test-results/screenshots
