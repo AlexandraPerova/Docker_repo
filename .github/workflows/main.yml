@@ -42,12 +42,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: screenshots
-          path: playwright-report/screenshots
-
-      - name: Upload test videos
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: videos
-          path: playwright-report/videos
+          name: playwright-screenshots
+          path: playwright-report
