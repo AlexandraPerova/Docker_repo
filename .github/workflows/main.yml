@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: playwright-screenshots
-          path: playwright-report/videos
+          path: playwright-report
 
       - name: Upload Playwright test results
         if: always()
