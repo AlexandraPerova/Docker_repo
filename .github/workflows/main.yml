@@ -37,12 +37,12 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test
         
-      - name: Upload test screenshots
+      - name: Upload test videos
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: playwright-screenshots
-          path: playwright-report
+          path: playwright-report/videos
 
       - name: Upload Playwright test results
         if: always()
