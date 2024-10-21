@@ -25,11 +25,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
+      - name: Install Playwright browsers with screenshots
+        run: npx playwright install --with-deps -screenshot
 
-      - name: Run Playwright tests
-        run: npx playwright test
+      - name: Run Playwright tests with screenshots
+        run: npx playwright test --project=chromium --screenshot
 
       - name: Upload Playwright test results
         if: always()
@@ -37,10 +37,9 @@ jobs:
         with:
           name: playwright-results
           path: playwright-report
-          
-      - name: Upload test screenshots of 
-        if: always()
+
+      - name: Upload screenshots
         uses: actions/upload-artifact@v3
-        with:
-          name: screenshots
-          path: test-results/screenshots
+        with: 
+          name: playwright-screenshots
+          path: playwright-screenshot
