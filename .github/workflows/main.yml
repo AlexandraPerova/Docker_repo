@@ -43,11 +43,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: screenshots
-          path: test-results/screenshots
+          path: test-results
 
       - name: Upload test videos
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: videos
-          path: test-results/videos
+          path: test-results
